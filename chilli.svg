@@ -1,0 +1,460 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- TRIPPY COLOR-CYCLING GRADIENTS -->
+    <linearGradient id="psychedelicBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%">
+        <animate attributeName="stop-color" values="#FF00FF;#00FFFF;#FFFF00;#FF00FF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="25%">
+        <animate attributeName="stop-color" values="#00FFFF;#FFFF00;#FF00FF;#00FFFF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%">
+        <animate attributeName="stop-color" values="#FFFF00;#FF00FF;#00FFFF;#FFFF00" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="75%">
+        <animate attributeName="stop-color" values="#FF6600;#9900FF;#00FF66;#FF6600" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%">
+        <animate attributeName="stop-color" values="#9900FF;#00FF66;#FF6600;#9900FF" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <radialGradient id="chiliVortex" cx="50%" cy="50%" r="50%">
+      <stop offset="0%">
+        <animate attributeName="stop-color" values="#FF0000;#FF6600;#FFFF00;#FF0000" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="30%">
+        <animate attributeName="stop-color" values="#8B0000;#FF0066;#FF3300;#8B0000" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%">
+        <animate attributeName="stop-color" values="#4A0000;#990033;#CC3300;#4A0000" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%">
+        <animate attributeName="stop-color" values="#1A0000;#330011;#661100;#1A0000" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="8s" repeatCount="indefinite"/>
+    </radialGradient>
+    
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%">
+        <animate attributeName="stop-color" values="#FF00FF;#00FFFF;#FF00FF" dur="1s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%">
+        <animate attributeName="stop-color" values="#FFFF00;#FF00FF;#FFFF00" dur="1s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%">
+        <animate attributeName="stop-color" values="#00FFFF;#FFFF00;#00FFFF" dur="1s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="rainbowStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF0000">
+        <animate attributeName="offset" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="16%" stop-color="#FF7F00">
+        <animate attributeName="offset" values="0.16;1.16;0.16" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="33%" stop-color="#FFFF00">
+        <animate attributeName="offset" values="0.33;1.33;0.33" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#00FF00">
+        <animate attributeName="offset" values="0.5;1.5;0.5" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="66%" stop-color="#0000FF">
+        <animate attributeName="offset" values="0.66;1.66;0.66" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="83%" stop-color="#4B0082">
+        <animate attributeName="offset" values="0.83;1.83;0.83" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#9400D3">
+        <animate attributeName="offset" values="1;2;1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <radialGradient id="sourCreamTrip" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%">
+        <animate attributeName="stop-color" values="#FFFFFF;#FFE0F0;#E0FFFF;#FFFFFF" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="70%">
+        <animate attributeName="stop-color" values="#F0F0F0;#FFB0D0;#B0FFFF;#F0F0F0" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%">
+        <animate attributeName="stop-color" values="#E8E8E8;#FF80C0;#80FFFF;#E8E8E8" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+    
+    <linearGradient id="steamRainbow" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%">
+        <animate attributeName="stop-color" values="#FF00FF80;#00FFFF80;#FFFF0080;#FF00FF80" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFFFFF00"/>
+    </linearGradient>
+    
+    <!-- TRIPPY FILTERS -->
+    <filter id="psychedelicGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix type="hueRotate" values="0" result="hueBlur">
+        <animate attributeName="values" values="0;360" dur="3s" repeatCount="indefinite"/>
+      </feColorMatrix>
+      <feMerge>
+        <feMergeNode in="hueBlur"/>
+        <feMergeNode in="hueBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="wavyDistort" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise">
+        <animate attributeName="baseFrequency" values="0.02;0.04;0.02" dur="4s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" values="10;25;10" dur="3s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+    
+    <filter id="hueRotate">
+      <feColorMatrix type="hueRotate" values="0">
+        <animate attributeName="values" values="0;360" dur="5s" repeatCount="indefinite"/>
+      </feColorMatrix>
+    </filter>
+    
+    <filter id="megaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix type="hueRotate" values="0" result="hue">
+        <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"/>
+      </feColorMatrix>
+      <feMerge>
+        <feMergeNode in="hue"/>
+        <feMergeNode in="hue"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="fractalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise">
+        <animate attributeName="seed" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8"/>
+    </filter>
+    
+    <!-- PATTERNS -->
+    <pattern id="hypnoticSpiral" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <g>
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#FF00FF" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="#FFFF00" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="15" fill="none" stroke="#FF6600" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="5" fill="none" stroke="#9900FF" stroke-width="2" opacity="0.3"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/>
+      </g>
+    </pattern>
+    
+    <pattern id="movingStripes" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="10" height="20" fill="#FF00FF" opacity="0.2"/>
+      <rect x="10" width="10" height="20" fill="#00FFFF" opacity="0.2"/>
+      <animateTransform attributeName="patternTransform" type="translate" values="0,0;20,0" dur="1s" repeatCount="indefinite"/>
+    </pattern>
+  </defs>
+  
+  <!-- PSYCHEDELIC BACKGROUND -->
+  <rect width="800" height="600" fill="url(#psychedelicBg)"/>
+  
+  <!-- Background hypnotic pattern -->
+  <rect width="800" height="600" fill="url(#hypnoticSpiral)" opacity="0.4"/>
+  
+  <!-- PULSATING BACKGROUND RINGS -->
+  <g opacity="0.3">
+    <circle cx="400" cy="380" r="50" fill="none" stroke="url(#neonGlow)" stroke-width="3">
+      <animate attributeName="r" values="50;400;50" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="380" r="100" fill="none" stroke="url(#neonGlow)" stroke-width="3">
+      <animate attributeName="r" values="100;450;100" dur="6s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="400" cy="380" r="150" fill="none" stroke="url(#neonGlow)" stroke-width="3">
+      <animate attributeName="r" values="150;500;150" dur="6s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+  
+  <!-- MORPHING BACKGROUND BLOBS -->
+  <g filter="url(#hueRotate)" opacity="0.4">
+    <ellipse cx="150" cy="150" fill="#FF00FF">
+      <animate attributeName="rx" values="80;120;80" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="60;100;60" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="150;200;150" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="650" cy="100" fill="#00FFFF">
+      <animate attributeName="rx" values="100;70;100" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="80;120;80" dur="4.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="700" cy="500" fill="#FFFF00">
+      <animate attributeName="rx" values="90;130;90" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="70;110;70" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <!-- WARPED TABLE -->
+  <g filter="url(#wavyDistort)">
+    <rect x="0" y="280" width="800" height="320" fill="#E8A849"/>
+    <rect x="0" y="280" width="800" height="320" fill="url(#movingStripes)"/>
+  </g>
+  
+  <!-- TRIPPY MUG with eyes -->
+  <g filter="url(#psychedelicGlow)">
+    <path d="M 550 120 L 550 240 Q 550 270, 600 270 L 680 270 Q 730 270, 730 240 L 730 120 Q 730 100, 640 100 Q 550 100, 550 120" fill="#FFFFFF">
+      <animate attributeName="d" values="M 550 120 L 550 240 Q 550 270, 600 270 L 680 270 Q 730 270, 730 240 L 730 120 Q 730 100, 640 100 Q 550 100, 550 120;M 545 125 L 545 245 Q 545 280, 595 275 L 685 275 Q 740 275, 735 245 L 735 115 Q 735 95, 640 95 Q 545 95, 545 125;M 550 120 L 550 240 Q 550 270, 600 270 L 680 270 Q 730 270, 730 240 L 730 120 Q 730 100, 640 100 Q 550 100, 550 120" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 730 140 Q 790 140, 790 190 Q 790 240, 730 240" fill="none" stroke="url(#rainbowStroke)" stroke-width="20"/>
+    
+    <!-- Mug face - EYES -->
+    <g>
+      <!-- Left eye -->
+      <ellipse cx="600" cy="160" rx="25" ry="30" fill="#FFFFFF" stroke="#000" stroke-width="2">
+        <animate attributeName="ry" values="30;5;30" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="600" cy="165" r="12" fill="#000">
+        <animate attributeName="cx" values="595;605;595" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="160;170;160" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="595" cy="158" r="5" fill="#FFFFFF"/>
+      <!-- Spiral in eye -->
+      <circle cx="600" cy="165" r="8" fill="none" stroke="#FF00FF" stroke-width="1" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 600 165" to="360 600 165" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Right eye -->
+      <ellipse cx="680" cy="160" rx="25" ry="30" fill="#FFFFFF" stroke="#000" stroke-width="2">
+        <animate attributeName="ry" values="30;5;30" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="680" cy="165" r="12" fill="#000">
+        <animate attributeName="cx" values="675;685;675" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="160;170;160" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="675" cy="158" r="5" fill="#FFFFFF"/>
+      <circle cx="680" cy="165" r="8" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 680 165" to="-360 680 165" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Trippy smile -->
+    <path d="M 600 210 Q 640 250, 680 210" fill="none" stroke="url(#rainbowStroke)" stroke-width="4" stroke-linecap="round">
+      <animate attributeName="d" values="M 600 210 Q 640 250, 680 210;M 600 220 Q 640 260, 680 220;M 600 210 Q 640 250, 680 210" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Text warping -->
+    <text x="640" y="130" font-family="Comic Sans MS, cursive" font-size="16" text-anchor="middle" filter="url(#hueRotate)" font-weight="bold">
+      classic, fresh
+      <animate attributeName="font-size" values="16;20;16" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- THE BOWL - TRIPPY VERSION -->
+  <g filter="url(#megaGlow)">
+    <!-- Outer bowl ring - rainbow pulsing -->
+    <ellipse cx="350" cy="400" rx="230" ry="95" fill="none" stroke="url(#rainbowStroke)" stroke-width="8">
+      <animate attributeName="rx" values="230;240;230" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="95;100;95" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Bowl body with shifting colors -->
+    <ellipse cx="350" cy="400" rx="220" ry="90" fill="#FFFFFF"/>
+    <ellipse cx="350" cy="400" rx="220" ry="90" fill="url(#movingStripes)" opacity="0.3"/>
+    
+    <!-- Decorative rings -->
+    <ellipse cx="350" cy="400" rx="210" ry="85" fill="none" stroke="url(#neonGlow)" stroke-width="4">
+      <animateTransform attributeName="transform" type="rotate" from="0 350 400" to="360 350 400" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Bowl inner psychedelic pattern -->
+    <g opacity="0.5" filter="url(#hueRotate)">
+      <circle cx="200" cy="390" r="15" fill="#FF00FF"/>
+      <circle cx="250" cy="410" r="12" fill="#00FFFF"/>
+      <circle cx="450" cy="385" r="14" fill="#FFFF00"/>
+      <circle cx="500" cy="405" r="13" fill="#FF6600"/>
+      <circle cx="350" cy="450" r="10" fill="#9900FF"/>
+    </g>
+    
+    <!-- VORTEX CHILI -->
+    <ellipse cx="350" cy="395" rx="190" ry="75" fill="url(#chiliVortex)"/>
+    
+    <!-- Spiraling chili pattern -->
+    <g>
+      <path d="M 350 395 m -150 0 a 150 60 0 1 0 300 0" fill="none" stroke="#FF4400" stroke-width="8" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 350 395" to="360 350 395" dur="8s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 350 395 m -120 0 a 120 48 0 1 0 240 0" fill="none" stroke="#FF6600" stroke-width="6" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 350 395" to="-360 350 395" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 350 395 m -90 0 a 90 36 0 1 0 180 0" fill="none" stroke="#FF8800" stroke-width="5" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 350 395" to="360 350 395" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 350 395 m -60 0 a 60 24 0 1 0 120 0" fill="none" stroke="#FFAA00" stroke-width="4" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 350 395" to="-360 350 395" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Bubbling orbs rising from chili -->
+    <g filter="url(#psychedelicGlow)">
+      <circle r="8" fill="#FF0000">
+        <animate attributeName="cx" values="300;310;290;300" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="400;350;300;400" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="8;15;5;8" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FF0000;#FF00FF;#FFFF00;#FF0000" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="6" fill="#FF6600">
+        <animate attributeName="cx" values="380;400;370;380" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="390;320;280;390" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="6;12;4;6" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FF6600;#00FFFF;#FF00FF;#FF6600" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="10" fill="#FFFF00">
+        <animate attributeName="cx" values="420;400;440;420" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="385;310;250;385" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="10;18;6;10" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FFFF00;#FF0066;#00FF00;#FFFF00" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="7" fill="#00FF00">
+        <animate attributeName="cx" values="260;280;250;260" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="395;330;270;395" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="7;14;5;7" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- MORPHING PEPPER SLICES -->
+    <g filter="url(#fractalNoise)">
+      <path fill="#FF0066">
+        <animate attributeName="d" values="M 230 360 Q 260 330, 290 350 Q 300 380, 270 390 Q 240 385, 230 360;M 225 355 Q 270 320, 300 345 Q 315 385, 275 400 Q 235 395, 225 355;M 230 360 Q 260 330, 290 350 Q 300 380, 270 390 Q 240 385, 230 360" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FF0066;#FF6600;#FFFF00;#FF0066" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path fill="#FF3300">
+        <animate attributeName="d" values="M 430 350 Q 470 320, 500 355 Q 505 385, 475 395 Q 440 390, 430 350;M 425 345 Q 480 310, 515 350 Q 525 390, 485 405 Q 435 400, 425 345;M 430 350 Q 470 320, 500 355 Q 505 385, 475 395 Q 440 390, 430 350" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FF3300;#FF00FF;#00FFFF;#FF3300" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- PSYCHEDELIC SOUR CREAM with face -->
+    <g>
+      <ellipse cx="350" cy="355" rx="60" ry="45" fill="url(#sourCreamTrip)">
+        <animate attributeName="rx" values="60;70;55;60" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="45;50;40;45" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Sour cream face -->
+      <!-- Eyes -->
+      <ellipse cx="330" cy="345" rx="10" ry="12" fill="#FFFFFF" stroke="#000" stroke-width="1">
+        <animate attributeName="ry" values="12;2;12" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="330" cy="348" r="5" fill="#000">
+        <animate attributeName="cy" values="346;350;346" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <ellipse cx="370" cy="345" rx="10" ry="12" fill="#FFFFFF" stroke="#000" stroke-width="1">
+        <animate attributeName="ry" values="12;2;12" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="370" cy="348" r="5" fill="#000">
+        <animate attributeName="cy" values="346;350;346" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Trippy mouth -->
+      <ellipse cx="350" cy="370" rx="15" ry="8" fill="#FF69B4">
+        <animate attributeName="rx" values="15;20;10;15" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#FF69B4;#00CED1;#FFD700;#FF69B4" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <!-- DANCING CILANTRO -->
+    <g filter="url(#hueRotate)">
+      <g transform="translate(340, 320)">
+        <path d="M 0 0 Q -20 -15, -12 -35 Q -5 -25, 0 -20 Q 5 -25, 12 -35 Q 20 -15, 0 0" fill="#00FF00">
+          <animate attributeName="d" values="M 0 0 Q -20 -15, -12 -35 Q -5 -25, 0 -20 Q 5 -25, 12 -35 Q 20 -15, 0 0;M 0 0 Q -30 -20, -18 -45 Q -8 -35, 0 -28 Q 8 -35, 18 -45 Q 30 -20, 0 0;M 0 0 Q -20 -15, -12 -35 Q -5 -25, 0 -20 Q 5 -25, 12 -35 Q 20 -15, 0 0" dur="1.5s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="rotate" values="-10;10;-10" dur="1s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <g transform="translate(365, 310)">
+        <path d="M 0 0 Q -15 -12, -10 -28 Q -4 -20, 0 -15 Q 4 -20, 10 -28 Q 15 -12, 0 0" fill="#00FF66">
+          <animate attributeName="d" values="M 0 0 Q -15 -12, -10 -28 Q -4 -20, 0 -15 Q 4 -20, 10 -28 Q 15 -12, 0 0;M 0 0 Q -22 -18, -15 -40 Q -6 -30, 0 -22 Q 6 -30, 15 -40 Q 22 -18, 0 0;M 0 0 Q -15 -12, -10 -28 Q -4 -20, 0 -15 Q 4 -20, 10 -28 Q 15 -12, 0 0" dur="1.8s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="rotate" values="15;-15;15" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+  </g>
+  
+  <!-- RAINBOW STEAM -->
+  <g>
+    <path fill="none" stroke="url(#rainbowStroke)" stroke-width="12" stroke-linecap="round" filter="url(#psychedelicGlow)">
+      <animate attributeName="d" values="M 280 320 Q 260 260, 300 200 Q 330 140, 280 80;M 280 320 Q 310 260, 270 200 Q 240 140, 290 80;M 280 320 Q 260 260, 300 200 Q 330 140, 280 80" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path fill="none" stroke="url(#rainbowStroke)" stroke-width="15" stroke-linecap="round" filter="url(#psychedelicGlow)">
+      <animate attributeName="d" values="M 350 310 Q 330 240, 370 170 Q 400 100, 350 30;M 350 310 Q 380 240, 340 170 Q 310 100, 360 30;M 350 310 Q 330 240, 370 170 Q 400 100, 350 30" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path fill="none" stroke="url(#rainbowStroke)" stroke-width="10" stroke-linecap="round" filter="url(#psychedelicGlow)">
+      <animate attributeName="d" values="M 420 325 Q 450 270, 410 210 Q 380 150, 430 90;M 420 325 Q 390 270, 440 210 Q 470 150, 410 90;M 420 325 Q 450 270, 410 210 Q 380 150, 430 90" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- SPOON with rainbow reflection -->
+  <g transform="rotate(-25 170 370)" filter="url(#megaGlow)">
+    <rect x="70" y="290" width="14" height="190" rx="4" fill="#303030"/>
+    <rect x="72" y="295" width="4" height="180" fill="url(#rainbowStroke)" opacity="0.5"/>
+    <ellipse cx="77" cy="285" rx="28" ry="40" fill="#404040"/>
+    <ellipse cx="74" cy="280" rx="20" ry="28" fill="url(#rainbowStroke)" opacity="0.3"/>
+  </g>
+  
+  <!-- FLOATING GEOMETRIC SHAPES -->
+  <g filter="url(#psychedelicGlow)">
+    <!-- Spinning triangles -->
+    <polygon points="100,500 130,450 160,500" fill="none" stroke="#FF00FF" stroke-width="3">
+      <animateTransform attributeName="transform" type="rotate" from="0 130 475" to="360 130 475" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#FF00FF;#00FFFF;#FFFF00;#FF00FF" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <polygon points="650,520 680,470 710,520" fill="none" stroke="#00FFFF" stroke-width="3">
+      <animateTransform attributeName="transform" type="rotate" from="0 680 495" to="-360 680 495" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00FFFF;#FFFF00;#FF00FF;#00FFFF" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Pulsing hexagon -->
+    <polygon points="720,150 750,165 750,195 720,210 690,195 690,165" fill="none" stroke="url(#neonGlow)" stroke-width="3">
+      <animateTransform attributeName="transform" type="rotate" from="0 720 180" to="360 720 180" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="points" values="720,150 750,165 750,195 720,210 690,195 690,165;720,140 760,160 760,200 720,220 680,200 680,160;720,150 750,165 750,195 720,210 690,195 690,165" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  
+  <!-- THIRD EYE above scene -->
+  <g filter="url(#psychedelicGlow)" transform="translate(400, 50)">
+    <ellipse cx="0" cy="0" rx="40" ry="25" fill="none" stroke="url(#rainbowStroke)" stroke-width="4">
+      <animate attributeName="rx" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="25;35;25" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="0" cy="0" r="15" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="10" fill="url(#chiliVortex)">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#000"/>
+    <circle cx="-3" cy="-3" r="2" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Radiating lines from eye -->
+  <g stroke="url(#neonGlow)" stroke-width="2" opacity="0.5">
+    <line x1="400" y1="80" x2="400" y2="120">
+      <animate attributeName="y2" values="120;150;120" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="430" y1="65" x2="460" y2="95">
+      <animate attributeName="x2" values="460;490;460" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="370" y1="65" x2="340" y2="95">
+      <animate attributeName="x2" values="340;310;340" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="450" y1="50" x2="490" y2="50">
+      <animate attributeName="x2" values="490;520;490" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="350" y1="50" x2="310" y2="50">
+      <animate attributeName="x2" values="310;280;310" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>
