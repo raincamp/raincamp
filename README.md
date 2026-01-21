@@ -1,1 +1,1 @@
-![chilli](./chilli.svg)
+![pelican-fly](./pelican-fly.svg)
